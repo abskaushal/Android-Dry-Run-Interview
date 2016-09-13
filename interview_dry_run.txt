@@ -1,8 +1,14 @@
-Question 1 - Whatís your favorite tool or library for Android? Why is it so useful?
+#-------------------------------------------------------#
+#---------------- Abhishek Kaushal ---------------------#
+#---------Android Interview Dry Run answers ------------#
+#-------------------------------------------------------#
+
+
+Question 1 - What‚Äôs your favorite tool or library for Android? Why is it so useful?
 
 Answer: My favorite library for android is Picasso library for ImageLoading. I like it because it takes all the overhead involved in downloading the images on multiple background threads and caching them using LRU cache mechanism which otherwise is very time consuming to implement and it requires a sound knowlede of multithreading fundamentals.
 
-Question 2 - You want to open a map app from an app that youíre building. The address, city, state, and ZIP code are provided by the user. What steps are involved in sending that data to a map app?
+Question 2 - You want to open a map app from an app that you‚Äôre building. The address, city, state, and ZIP code are provided by the user. What steps are involved in sending that data to a map app?
 
 Answer: The following are the steps involved:
 	1) First I will create a Uri using the data.
@@ -11,7 +17,7 @@ Answer: The following are the steps involved:
 	4) If output of step 3 is true then I will launch the intent.
 	5) If output of step 3 is false then I will show to the user appropriate dialog that No application is installed for maps.
 	
-Question 3 - Implement a method to perform basic string compression using the counts of repeated characters. For example, the string aabcccccaaa would become a2b1c5a3. If the "compressed" string would not become smaller than the original string, your method should return the original string. The method signature is: ìpublic static String compress(String input)î You must write all code in proper Java, and please include import statements for any libraries you use.
+Question 3 - Implement a method to perform basic string compression using the counts of repeated characters. For example, the string aabcccccaaa would become a2b1c5a3. If the "compressed" string would not become smaller than the original string, your method should return the original string. The method signature is: ‚Äúpublic static String compress(String input)‚Äù You must write all code in proper Java, and please include import statements for any libraries you use.
 
 Answer: public static String compress(String input){
 		String result ="";
