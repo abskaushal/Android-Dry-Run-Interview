@@ -1,0 +1,66 @@
+Question 1 - What’s your favorite tool or library for Android? Why is it so useful?
+
+Answer: My favorite library for android is Picasso library for ImageLoading. I like it because it takes all the overhead involved in downloading the images on multiple background threads and caching them using LRU cache mechanism which otherwise is very time consuming to implement and it requires a sound knowlede of multithreading fundamentals.
+
+Question 2 - You want to open a map app from an app that you’re building. The address, city, state, and ZIP code are provided by the user. What steps are involved in sending that data to a map app?
+
+Answer: The following are the steps involved:
+	1) First I will create a Uri using the data.
+	2) Then I will create the Intent using the required action and put the data.
+	3) Then I will check with PackageManager if there is any application that can resolve the intent created in step 2.
+	4) If output of step 3 is true then I will launch the intent.
+	5) If output of step 3 is false then I will show to the user appropriate dialog that No application is installed for maps.
+	
+Question 3 - Implement a method to perform basic string compression using the counts of repeated characters. For example, the string aabcccccaaa would become a2b1c5a3. If the "compressed" string would not become smaller than the original string, your method should return the original string. The method signature is: “public static String compress(String input)” You must write all code in proper Java, and please include import statements for any libraries you use.
+
+Answer: public static String compress(String input){
+		String result ="";
+		if(input.length()==0){
+			return input;
+		}
+		
+		StringBuffer buffer = new StringBuffer();
+		int count = 1;
+		buffer.append(input.charAt(0));
+		for(int i=1; i<input.length(); i++){
+			if(input.charAt(i-1) == input.charAt(i)){
+				count++;
+			}else{
+				buffer.append(count);
+				buffer.append(input.charAt(i));
+				count=1;
+			}
+		}
+		
+		buffer.append(count);
+		result = buffer.toString();
+		return result;
+	}
+	
+Question 4 - List and explain the differences between four different options you have for saving data while making an Android app. Pick one, and explain (without code) how you would implement it.
+
+Answer: The follwing are the 4 different options for saving data:-
+	1) Shared Preferences: Used to store cetain primitive data types such as int, boolean etc. Easy to implement.
+	2) Device Storage(Internal & External): Use mobile's internal or external storage to store data. Used to store large data files like mp3 or images.
+	3) Sqlite Database: Used to store relational data related to user. Data is well organized in the form of tables and can be queried whenever required.
+	4) Webserver: Used to store data permamently on the server or cloud. The data can be transported by using webservices and will be stored on the servers.
+	
+	Steps to create Sqlite Database:
+		1) Create a database class by extending SqliteOpenHelper
+		2) Create required tables by writing sql queries.
+		3) Write methods to insert, delete and update using insert , update and delete sql queries.
+		4) Call the methods created in step 3 wherever required
+		
+
+Question 5 - What are your thoughts about Fragments? Do you like or hate them? Why?
+
+Answer: Fragments are just like Activities except that they cannot exixt on their own.They need to be embedded on an Activity. Once we create a Fragment we can reuse it across different activities with different size. That is why I also prefer to use Fragments. Specially when we are building apps for tablets as well as mobile phones. We can use fragments to implement master-detail pattern in tablet where as use them seperately on 2 different activities in case of mobile phones.
+
+
+Question 6 - If you were to start your Android position today, what would be your goals a year from now?
+
+Answer: After one year the follwoing will be my goals:-
+	1) Get more hands on experience on Android by creating 4-5 android apps for users with beautiful UI and material design.
+	2) Start working on Android wear and Auto.
+	3) Try to do some opensource contribution in Android community in any form like by creating some libray or anything which can help the developers.
+
