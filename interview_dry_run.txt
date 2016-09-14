@@ -40,6 +40,8 @@ Answer: public static String compress(String input){
 		
 		buffer.append(count);
 		result = buffer.toString();
+		if(!(result.length() < input.length()))
+			return input;
 		return result;
 	}
 	
